@@ -1,0 +1,14 @@
+{
+  "appName": "Git Contribution Tracker",
+  "version": "1.0.0",
+  "settings": {
+    "theme": "dark",
+    "language": "en",
+    "timezone": "UTC+5:30"
+  },
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "name": "contributions"
+  }
+}
