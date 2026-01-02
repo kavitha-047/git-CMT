@@ -79,6 +79,31 @@
                 <!-- Activity items will be loaded by JS -->
             </div>
         </section>
+        <section class="activity-section" style="margin-top: 2.5rem;">
+            <div class="section-title">
+                Commit History
+                <div class="filter-btns">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Main</button>
+                    <button class="filter-btn">Dev</button>
+                </div>
+            </div>
+            <div class="history-table-container">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Commit Hash</th>
+                            <th>Message</th>
+                            <th>Timestamp</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="commit-history-body">
+                        <!-- Commit history will be loaded by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>

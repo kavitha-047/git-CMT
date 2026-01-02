@@ -54,8 +54,50 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('mouseenter', () => {
             card.style.borderColor = 'var(--primary)';
         });
-        card.addEventListener('mouseleave', () => {
-            card.style.borderColor = 'var(--border)';
         });
     });
+
+    // Commit History
+    const historyBody = document.getElementById('commit-history-body');
+    
+    const historyData = [
+        {
+            hash: "7f77fe1",
+            message: "Dashboard UI implementation backdated",
+            time: "2026-01-01 18:00",
+            status: "Success"
+        },
+        {
+            hash: "f241f79",
+            message: "Backdated contribution for Jan 1, 2026",
+            time: "2026-01-01 18:00",
+            status: "Success"
+        },
+        {
+            hash: "214e8ed",
+            message: "update log 7",
+            time: "2026-03-12 22:41",
+            status: "Success"
+        },
+        {
+            hash: "a9d8c2e",
+            message: "Initial repo setup",
+            time: "2026-03-12 15:20",
+            status: "Success"
+        }
+    ];
+
+    function renderHistory() {
+        if (!historyBody) return;
+        historyBody.innerHTML = historyData.map(item => `
+            <tr>
+                <td><span class="hash-cell">${item.hash}</span></td>
+                <td>${item.message}</td>
+                <td style="color: var(--text-muted);">${item.time}</td>
+                <td><span class="status-badge success">${item.status}</span></td>
+            </tr>
+        `).join('');
+    }
+
+    renderHistory();
 });
