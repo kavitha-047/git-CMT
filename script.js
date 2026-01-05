@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     function renderActivities() {
+        if (!activityList) return;
         activityList.innerHTML = activities.map((act, index) => `
             <div class="activity-item" style="animation-delay: ${index * 0.1}s">
                 <div class="activity-icon">
@@ -42,25 +43,29 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `).join('');
         
-        // Re-run lucide icons for dynamic content
         lucide.createIcons();
     }
 
     renderActivities();
 
-    // Add some interactivity to stat cards
     const cards = document.querySelectorAll('.stat-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.style.borderColor = 'var(--primary)';
         });
+        card.addEventListener('mouseleave', () => {
+            card.style.borderColor = 'var(--border)';
         });
     });
 
-    // Commit History
     const historyBody = document.getElementById('commit-history-body');
-    
     const historyData = [
+        {
+            hash: "e918bf0",
+            message: "Added commit history feature",
+            time: "2026-01-02 23:00",
+            status: "Success"
+        },
         {
             hash: "7f77fe1",
             message: "Dashboard UI implementation backdated",
@@ -77,12 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hash: "214e8ed",
             message: "update log 7",
             time: "2026-03-12 22:41",
-            status: "Success"
-        },
-        {
-            hash: "a9d8c2e",
-            message: "Initial repo setup",
-            time: "2026-03-12 15:20",
             status: "Success"
         }
     ];
