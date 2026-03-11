@@ -8,5 +8,19 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "kavitha-047",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavitha-047/git-CMT.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/kavitha-047/git-CMT/issues"
+  },
+  "homepage": "https://github.com/kavitha-047/git-CMT#readme",
+  "dependencies": {
+    "jsonfile": "^6.2.0",
+    "moment": "^2.30.1",
+    "simple-git": "^3.32.3"
+  }
 }
